@@ -10,11 +10,10 @@ const miPedidoDePiza = new Promise((resolve,reject)=>{
         }
     },3000);
 });
-const manejarPedido = (mensajeDeConfirmacion)=>{
-    console.log(mensajeDeConfirmacion);
-};
-const rechazarPedido = (mensajeDeError)=>{
-    console.log(mensajeDeError);
-}
 
-miPedidoDePiza.then(manejarPedido,rechazarPedido);
+miPedidoDePiza.then((mensajeDeConfirmacion)=>{
+    console.log(mensajeDeConfirmacion);
+}).then(null,(mensajeDeError)=>{
+    console.log(mensajeDeError);
+});
+
